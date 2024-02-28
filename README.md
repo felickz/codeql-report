@@ -47,12 +47,12 @@ jobs:
 
 In this example, the felickz/codeql-report action is used from the `main` branch directly.  The report is run every 6 hours via cron schedule.
 
-The github-token input is required for the felickz/codeql-report action. It uses the GITHUB_TOKEN secret, which would need to have `metadata:read` and `actions:read` permissions for your organization.
+The github-token input is required for the felickz/codeql-report action. It uses the GITHUB_TOKEN secret, which would need to have `metadata:read` and `actions:read` permissions for your organization for any private repos.
 
 The `upload-artfact` action is used to create the CSV attached to the action workflow summary.
 
 ## Inputs
 ### github-token
-Required The GitHub token to authenticate and pull CodeQL Action workflow status with.  Needs to have `metadata:read` and `actions:read` permissions for your organization.
+Required The GitHub token to authenticate and pull CodeQL Action workflow status with.  Needs to have `metadata:read` and `actions:read` permissions for your organization's private repos.
 ### organization
 Optional The GitHub Organization. Defaults to the current Organization.
