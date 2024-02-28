@@ -35,7 +35,7 @@ jobs:
 
     steps:
     - name: Use felickz/codeql-report action
-      uses: felickz/codeql-report@v1
+      uses: felickz/codeql-report@main
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload CodeQL Report CSV as Artifact
@@ -45,12 +45,14 @@ jobs:
         path: ./*.csv
 ```
 
-In this example, the felickz/codeql-report action is used
+In this example, the felickz/codeql-report action is used from the `main` branch directly.  The report is run every 6 hours via cron schedule.
 
-The github-token input is required for the felickz/codeql-report action. It uses the GITHUB_TOKEN secret, which is automatically created by GitHub for your repository.
+The github-token input is required for the felickz/codeql-report action. It uses the GITHUB_TOKEN secret, which would need to have `metadata:read` and `actions:read` permissions for your organization.
+
+The `upload-artfact` action is used to create the CSV attached to the action workflow summary.
 
 ## Inputs
 ### github-token
-Required The GitHub token to authenticate and pull CodeQL Action workflow status with.
+Required The GitHub token to authenticate and pull CodeQL Action workflow status with.  Needs to have `metadata:read` and `actions:read` permissions for your organization.
 ### organization
 Optional The GitHub Organization. Defaults to the current Organization.
