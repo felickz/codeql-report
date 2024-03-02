@@ -8,6 +8,8 @@ This action allows you to generate a CodeQL Actions workflow success/failure rep
 - Repo
 - Workflow_Path
 
+## Sample Output
+- [CodeQLWorkflowStatus.csv ](https://github.com/felickz/codeql-report/blob/main/CodeQLWorkflowStatus.csv)
 <img width="978" alt="image" src="https://github.com/felickz/codeql-report/assets/1760475/ccc5a2b4-252e-40e1-8eba-b9c30c12bd8b">
 
 
